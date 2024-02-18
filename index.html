@@ -36,14 +36,16 @@
             border-radius: 5% / 10%;
             width: 100px;
             height: 50px;
-            left: calc(50vh - 50%)
+            left: 50vh;
+            transform: translate(-50%, -50%);
             top: 7.5vh;
         }
         
         container {
             height: 100vh;
             width: 100vw;
-            left: calc(50vh - 50%)
+            left: 50vh;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
@@ -69,8 +71,6 @@
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
-        const width = 85vw
-        const height = 85vh
         container.appendChild(player);
         player.load("ducklife.swf");
     });
