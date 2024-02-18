@@ -11,10 +11,14 @@
             background-color: transparent;
             color: transparent;
         }
+        button {
+            color: white;
+            background-color: lightgray;
+        }
     </style>
 </head>
 <body>
-  <button onclick="load()">Load "Duck Life"</button>
+  <button class="button" onclick="load()">Load "Duck Life"</button>
   <script>
     function load() {
         player.load("movie.swf").then(() => {
