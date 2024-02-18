@@ -33,7 +33,7 @@
             background-color: lightgray;
             color: white;
             border: 2px solid gray;
-            border-radius: 15px;
+            border-radius: 10%;
             width: 100px;
             height: 35px;
             left: calc(50vw - 50%)
@@ -47,16 +47,20 @@
     </style>
 </head>
 <body>
-  <button class="button" onclick="load()">Load "Duck Life"</button>
-  <div id="container"></div>
+  <button onclick="openFullscreen()">Enter Fullscreen</button>
+  <div id="container" style="margin: 50px;"></div>
   <script>
-    function load() {
-        player.load("movie.swf").then(() => {
-          console.info("Ruffle successfully loaded the file");
-        }).catch((e) => {
-          console.error(`Ruffle failed to load the file: ${e}`);
-        });
-    } 
+      var elem = document.getElementById("container");
+
+      function openFullscreen() {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
   </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};
