@@ -33,22 +33,23 @@
             background-color: lightgray;
             color: white;
             border: 2px solid gray;
-            border-radius: 10%;
+            border-radius: 5% / 10%;
             width: 100px;
-            height: 35px;
-            left: calc(50vw - 50%)
+            height: 50px;
+            left: calc(50vh - 50%)
             top: 7.5vh;
         }
         
         container {
             height: 100vh;
             width: 100vw;
+            left: calc(50vh - 50%)
         }
     </style>
 </head>
 <body>
   <button onclick="openFullscreen()">Enter Fullscreen</button>
-  <div id="container" style="margin: 50px;"></div>
+  <div id="container" style="margin: 10px;"></div>
   <script>
       var elem = document.getElementById("container");
 
@@ -63,11 +64,13 @@
       }
   </script>
   <script>
-    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer = window.RufflePlayer || {};        
     window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
+        const width = 85vw
+        const height = 85vh
         container.appendChild(player);
         player.load("ducklife.swf");
     });
