@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Roboto font using Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <title>Ruffle</title>
     <style>
         body {
@@ -10,13 +14,32 @@
             padding: 0;
             background-color: transparent;
             color: transparent;
+            font-family: "Roboto", sans-serif;
         }
+        
+        .roboto-medium {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+        }
+        
+        .roboto-medium-italic {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          font-style: italic;
+        }
+        
         button {
             background-color: lightgray;
             color: white;
             border: 2px solid gray;
-            border-radius: 15px;            
+            border-radius: 15px;
+            width: 100px;
+            height: 35px;
+            left: calc(50vw - 50%)
+            top: 7.5vh;
         }
+        
         container {
             height: 100vh;
             width: 100vw;
