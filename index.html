@@ -50,10 +50,10 @@
   <script>
       var elem = document.getElementById("container");
       var player = document.getElementById("container");
+      player.style.width = "100vw"; 
+      player.style.height = "100vh";
 
       function openFullscreen() {
-        player.style.width = "100vw"; 
-        player.style.height = "100vh";
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
