@@ -42,10 +42,16 @@
         elem.style.width = "100vw"; 
         elem.style.height = "100vh";
         if (elem.requestFullscreen) {
+          elem.style.width = "100vw"; 
+          elem.style.height = "100vh";
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.style.width = "100vw"; 
+          elem.style.height = "100vh";
           elem.webkitRequestFullscreen();
         } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.style.width = "100vw"; 
+          elem.style.height = "100vh";
           elem.msRequestFullscreen();
         }
       }
