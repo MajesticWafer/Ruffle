@@ -39,14 +39,18 @@
       var elem = document.getElementById("container");
 
       function openFullscreen() {
-        elem.style.width = "100vw";
-        elem.style.height = "100vh";
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
+          elem.style.width = "100vw";
+          elem.style.height = "100vh";
         } else if (elem.webkitRequestFullscreen) { /* Safari */
           elem.webkitRequestFullscreen();
+          elem.style.width = "100vw";
+          elem.style.height = "100vh";
         } else if (elem.msRequestFullscreen) { /* IE11 */
           elem.msRequestFullscreen();
+          elem.style.width = "100vw";
+          elem.style.height = "100vh";
         }
       }
 
