@@ -47,6 +47,16 @@
           elem.msRequestFullscreen();
         }
       }
+
+      document.addEventListener("fullscreenchange", function() {
+        if (document.fullscreenElement) {
+          elem.style.width = "100vw";
+          elem.style.height = "100vh";
+        } else {
+          elem.style.width = "85vw";
+          elem.style.height = "85vh";
+        }
+      });
   </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
