@@ -39,39 +39,14 @@
       var elem = document.getElementById("container");
 
       function openFullscreen() {
-        elem.style.width = "100vw"; 
-        elem.style.height = "100vh";
         if (elem.requestFullscreen) {
-          elem.style.width = "100vw"; 
-          elem.style.height = "100vh";
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
-          elem.style.width = "100vw"; 
-          elem.style.height = "100vh";
           elem.webkitRequestFullscreen();
         } else if (elem.msRequestFullscreen) { /* IE11 */
-          elem.style.width = "100vw"; 
-          elem.style.height = "100vh";
           elem.msRequestFullscreen();
         }
       }
-
-      function exitFullscreen() {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) { /* Safari */
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { /* IE11 */
-          document.msExitFullscreen();
-        }
-      }
-
-      document.addEventListener("fullscreenchange", function() {
-        if (!document.fullscreenElement) {
-          elem.style.width = "85vw"; 
-          elem.style.height = "85vh";
-        }
-      });
   </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
