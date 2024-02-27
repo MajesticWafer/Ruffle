@@ -14,6 +14,8 @@
             padding: 0;
             background-color: transparent;
             color: transparent;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
         }
         
         .roboto-medium {
@@ -44,7 +46,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="openFullscreen()">
   <button onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
   <div id="container" style="margin: 10px;"></div>
   <script>
