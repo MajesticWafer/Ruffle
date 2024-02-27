@@ -29,8 +29,6 @@
         
         #container {
             margin: 10px;
-            width: 85vw;
-            height: 85vh;
         }
     </style>
 </head>
@@ -39,6 +37,8 @@
   <div id="container"></div>
   <script>
       var elem = document.getElementById("container");
+      elem.style.width = "100vw"; 
+      elem.style.height = "100vh";
 
       function openFullscreen() {
         if (elem.requestFullscreen) {
@@ -74,6 +74,8 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
+        player.style.width = "85vw"; 
+        player.style.height = "85vh";
         player.load("ducklife.swf");
     });
   </script>
