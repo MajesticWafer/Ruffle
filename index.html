@@ -33,10 +33,10 @@
             color: white;
             border: 2px solid gray;
             border-radius: 5% / 10%;
-            width: 100px;
+            width: 150px;
             height: 50px;
-            left: 50vh;
-            top: 7.5vh;
+            left: 15px;
+            top: 10px;
         }
         
         container {
@@ -67,6 +67,8 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
+        player.style.width = "100vw"; 
+        player.style.height = "100vh";
         player.load("ducklife.swf");
     });
   </script>
