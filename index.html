@@ -55,7 +55,23 @@
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
+        // Get the viewport width and height
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Calculate the left and top positions for centering the player
+        const left = viewportWidth / 2 - player.offsetWidth / 2;
+        const top = viewportHeight / 2 - player.offsetHeight / 2;
+
         container.appendChild(player);
+        
+        // Set the player's position
+        player.style.left = `${left}px`;
+        player.style.top = `${top}px`;
+
+        player.style.width = 100vw;
+        player.style.height = 100vh;
+        
         player.load("ducklife.swf");
     });
   </script>
