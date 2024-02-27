@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Roboto font using Google Fonts-->
+    <!--Lato font using Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -27,19 +27,18 @@
             bottom: 10px;
         }
         
-        container {
-        
+        #container {
+            margin: 10px;
+            width: 85vw;
+            height: 85vh;
         }
     </style>
 </head>
 <body>
   <button onclick="openFullscreen()">Fullscreen</button>
-  <div id="container" style="margin: 10px;"></div>
+  <div id="container"></div>
   <script>
       var elem = document.getElementById("container");
-      var player = document.getElementById("container");
-      player.style.width = "100vw"; 
-      player.style.height = "100vh";
 
       function openFullscreen() {
         if (elem.requestFullscreen) {
@@ -50,6 +49,23 @@
           elem.msRequestFullscreen();
         }
       }
+
+      function exitFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+          document.msExitFullscreen();
+        }
+      }
+
+      document.addEventListener("fullscreenchange", function() {
+        if (!document.fullscreenElement) {
+          elem.style.width = "85vw"; 
+          elem.style.height = "85vh";
+        }
+      });
   </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
@@ -58,8 +74,6 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
-        player.style.width = "85vw"; 
-        player.style.height = "85vh";
         player.load("ducklife.swf");
     });
   </script>
