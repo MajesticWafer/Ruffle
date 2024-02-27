@@ -41,29 +41,13 @@
 
       function openFullscreen() {
         if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-          elem.style.width = "100vw";
-          elem.style.height = "100vh";
+          elem.requestFullscreen()
         } else if (elem.webkitRequestFullscreen) { /* Safari */
           elem.webkitRequestFullscreen();
-          elem.style.width = "100vw";
-          elem.style.height = "100vh";
         } else if (elem.msRequestFullscreen) { /* IE11 */
           elem.msRequestFullscreen();
-          elem.style.width = "100vw";
-          elem.style.height = "100vh";
         }
       }
-
-      document.addEventListener("fullscreenchange", function() {
-        if (document.fullscreenElement) {
-          elem.style.width = "100vw";
-          elem.style.height = "100vh";
-        } else {
-          elem.style.width = "85vw";
-          elem.style.height = "85vh";
-        }
-      });
   </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
@@ -72,8 +56,6 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
-        player.style.width = "85vw"; 
-        player.style.height = "85vh";
         player.load("ducklife.swf");
     });
   </script>
