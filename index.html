@@ -37,10 +37,10 @@
   <div id="container"></div>
   <script>
       var elem = document.getElementById("container");
-      elem.style.width = "100vw"; 
-      elem.style.height = "100vh";
 
       function openFullscreen() {
+        elem.style.width = "100vw"; 
+        elem.style.height = "100vh";
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
