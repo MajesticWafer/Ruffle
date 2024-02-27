@@ -46,7 +46,7 @@
         }
     </style>
 </head>
-<body onload="openFullscreen()">
+<body>
   <button onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
   <div id="container" style="margin: 10px;"></div>
   <script>
@@ -72,6 +72,7 @@
         player.style.width = "100vw"; 
         player.style.height = "100vh";
         player.load("ducklife.swf");
+        player.onload = openFullscreen();
     });
   </script>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
