@@ -45,12 +45,15 @@
     </style>
 </head>
 <body>
-  <button onclick="openFullscreen()">⛶</button>
+  <button onclick="openFullscreen()">Fullscreen</button>
   <div id="container" style="margin: 10px;"></div>
   <script>
       var elem = document.getElementById("container");
+      var player = document.getElementById("container");
 
       function openFullscreen() {
+        player.style.width = "100vw"; 
+        player.style.height = "100vh";
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -67,10 +70,9 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
-        player.style.width = "100vw"; 
-        player.style.height = "100vh";
+        player.style.width = "85vw"; 
+        player.style.height = "85vh";
         player.load("ducklife.swf");
-        openFullscreen();
     });
   </script>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
