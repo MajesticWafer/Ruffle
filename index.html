@@ -28,27 +28,12 @@
         }
         
         #container {
-            width: 85vw;
-            height: 85vh;
+        
         }
     </style>
 </head>
 <body>
-  <button onclick="openFullscreen()">Fullscreen</button>
   <div id="container"></div>
-  <script>
-      var elem = document.getElementById("container");
-
-      function openFullscreen() {
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen()
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-          elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-          elem.msRequestFullscreen();
-        }
-      }
-  </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
     window.addEventListener("load", (event) => {
@@ -58,7 +43,6 @@
 
         container.appendChild(player);
         
-        // Set the player's position
         player.style.left = 50vh - 50%;
         
         player.style.width = 100vw;
