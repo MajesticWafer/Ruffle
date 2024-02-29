@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Lato font using Google Fonts-->
+    <!--Roboto font using Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <title>Ruffle</title>
     <style>
         body {
@@ -14,26 +14,63 @@
             padding: 0;
             background-color: transparent;
             color: transparent;
-            font-family: "Lato", sans-serif;
-            font-weight: 400;
+        }
+        
+        .roboto-medium {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          font-style: normal;
+        }
+        
+        .roboto-medium-italic {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          font-style: italic;
         }
         
         button {
-            position: absolute;
-            color: black;
-            width: 50px;
+            background-color: lightgray;
+            color: white;
+            border: 2px solid gray;
+            border-radius: 5% / 10%;
+            width: 100px;
             height: 50px;
-            right: 10px;
-            bottom: 10px;
+            left: 50vh;
+            top: 7.5vh;
         }
         
-        #container {
+        container {
         
         }
     </style>
 </head>
 <body>
-  <div id="container"></div>
+  <script>
+      if (isIOS && isWebApp) {
+        var button = document.getElementById("fs");
+
+        button.hidden = false
+      } else if (isIOS && !isWebApp) {
+        button.hidden = true
+      } else {
+        button.hidden = false
+      }
+  </script>
+  <button id="fs" onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
+  <div id="container" style="margin: 10px;"></div>
+  <script>
+      var elem = document.getElementById("container");
+
+      function openFullscreen() {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      }
+  </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
     window.addEventListener("load", (event) => {
@@ -41,10 +78,6 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
-        
-        player.style.width = 100vw;
-        player.style.height = 100vh;
-        
         player.load("ducklife.swf");
     });
   </script>
