@@ -39,6 +39,7 @@
             height: 50px;
             left: 50vh;
             top: 7.5vh;
+            display: none;
         }
         
         container {
@@ -53,14 +54,14 @@
       var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
       var isWebApp = navigator.standalone || false
 
-      if (isIOS) {
+      if (isIOS === true) {
           console.log('This is an iOS device.')
           alert('This is an iOS device.')
-        if (!isWebApp) {
+        if (!isWebApp === true) {
           button.style.display = 'block'; // Show the button
           console.log('This is a web app.')
           alert('This is a web app.')
-        } else if (isWebApp) {
+        } else if (isWebApp === true) {
           button.style.display = 'block'; // Show the button
           console.log('This is not a web app.')
           alert('This is not a web app.')
