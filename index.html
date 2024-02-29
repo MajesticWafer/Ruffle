@@ -54,12 +54,16 @@
       var isWebApp = navigator.standalone || false
 
       if (isIOS) {
-          button.style.display = 'none'; // Hide the button
+          console.log('This is an iOS device.')
         if (!isWebApp) {
           button.style.display = 'block'; // Show the button
-        }
+          console.log('This is a web app.')
+        } else if (isWebApp) {
+          button.style.display = 'block'; // Show the button
+          console.log('This is not a web app.')
       } else {
         button.style.display = 'block'; // Show the button
+        console.log('This is not an iOS device or an unknown version of an iOS device.')
       }
   </script>
   <button id="fs" onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
