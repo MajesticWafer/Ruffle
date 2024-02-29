@@ -50,13 +50,14 @@
 <body>
   <script>
       var button = document.getElementById("fs");
-      var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
-      var isWebClip = window.navigator.standalone;
+      var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+      var isWebApp = navigator.standalone || false
 
-      if (isIOS && isWebClip) {
-        button.style.display = 'none'; // Hide the button
-      } else if (isIOS && !isWebClip) {
-        button.style.display = 'block'; // Show the button
+      if (isIOS) {
+          button.style.display = 'none'; // Hide the button
+        if (!isWebApp) {
+          button.style.display = 'block'; // Show the button
+        }
       } else {
         button.style.display = 'block'; // Show the button
       }
