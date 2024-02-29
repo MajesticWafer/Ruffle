@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!--Roboto font using Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +39,7 @@
             height: 50px;
             left: 50vh;
             top: 7.5vh;
+            display: none; /* Hide the button by default */
         }
         
         container {
@@ -51,11 +52,11 @@
       if (isIOS && isWebApp) {
         var button = document.getElementById("fs");
 
-        button.hidden = false
+        button.style.display = 'block'; // Show the button
       } else if (isIOS && !isWebApp) {
-        button.hidden = true
+        button.style.display = 'none'; // Hide the button
       } else {
-        button.hidden = false
+        button.style.display = 'block'; // Show the button
       }
   </script>
   <button id="fs" onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
