@@ -49,12 +49,14 @@
 </head>
 <body>
   <script>
-      if (isIOS && isWebApp) {
-        var button = document.getElementById("fs");
+      var button = document.getElementById("fs");
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      var isWebClip = window.navigator.standalone;
 
-        button.style.display = 'none'; // Show the button
-      } else if (isIOS && !isWebApp) {
-        button.style.display = 'block'; // Hide the button
+      if (isIOS && isWebClip) {
+        button.style.display = 'none'; // Hide the button
+      } else if (isIOS && !isWebClip) {
+        button.style.display = 'block'; // Show the button
       } else {
         button.style.display = 'block'; // Show the button
       }
