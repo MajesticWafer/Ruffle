@@ -50,7 +50,7 @@
 <body>
   <script>
       var button = document.getElementById("fs");
-      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
       var isWebClip = window.navigator.standalone;
 
       if (isIOS && isWebClip) {
