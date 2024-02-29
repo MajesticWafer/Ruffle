@@ -52,9 +52,9 @@
       if (isIOS && isWebApp) {
         var button = document.getElementById("fs");
 
-        button.style.display = 'block'; // Show the button
+        button.style.display = 'none'; // Show the button
       } else if (isIOS && !isWebApp) {
-        button.style.display = 'none'; // Hide the button
+        button.style.display = 'block'; // Hide the button
       } else {
         button.style.display = 'block'; // Show the button
       }
