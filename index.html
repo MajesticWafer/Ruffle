@@ -33,19 +33,13 @@
         const container = document.getElementById("container");
         container.appendChild(player);
         player.load("ducklife.swf");
+
+        var elem = document.getElementById("player")
+        elem.requestFullscreen();
+        elem.webkitRequestFullscreen();
+        elem.msRequestFullscreen();
     });
   </script>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-  <script>
-      var elem = document.getElementById("player");
-      
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-      }
-  </script>
 </body>
 </html>
