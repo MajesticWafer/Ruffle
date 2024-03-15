@@ -48,44 +48,7 @@
     </style>
 </head>
 <body>
-  <button id="fs" onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
-  <script>
-      var button = document.getElementById("fs");
-      var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-      var isWebApp = navigator.standalone || false
-
-      if (isIOS === true) {
-          console.log('This is an iOS device.')
-          alert('This is an iOS device.')
-        if (!isWebApp === true) {
-          button.style.display = 'block'; // Show the button
-          console.log('This is a web app.')
-          alert('This is a web app.')
-        } else if (isWebApp === true) {
-          button.style.display = 'block'; // Show the button
-          console.log('This is not a web app.')
-          alert('This is not a web app.')
-      } else {
-        button.style.display = 'block'; // Show the button
-        console.log('This is not an iOS device or an unknown version of an iOS device.')
-        alert('This is not an iOS device or an unknown version of an iOS device.')
-      }
-  </script>
-  <button id="fs" onclick="openFullscreen()" class="roboto-medium">Enter Fullscreen</button>
   <div id="container" style="margin: 10px;"></div>
-  <script>
-      var elem = document.getElementById("container");
-
-      function openFullscreen() {
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-          elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-          elem.msRequestFullscreen();
-        }
-      }
-  </script>
   <script>
     window.RufflePlayer = window.RufflePlayer || {};        
     window.addEventListener("load", (event) => {
@@ -93,6 +56,8 @@
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
+        player.style.width = 100vw;
+        player.style.height = 100vh;
         player.load("ducklife.swf");
     });
   </script>
