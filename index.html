@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <!--Roboto font using Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <title>Ruffle</title>
     <style>
         body {
@@ -17,33 +13,12 @@
             background-color: transparent;
             color: transparent;
         }
-        
-        .roboto-medium {
-          font-family: "Roboto", sans-serif;
-          font-weight: 500;
-          font-style: normal;
-        }
-        
-        .roboto-medium-italic {
-          font-family: "Roboto", sans-serif;
-          font-weight: 500;
-          font-style: italic;
-        }
-        
-        button {
-            background-color: lightgray;
-            color: white;
-            border: 2px solid gray;
-            border-radius: 5% / 10%;
-            width: 100px;
-            height: 50px;
-            left: 50vh;
-            top: 7.5vh;
-            display: none;
-        }
-        
-        container {
-        
+
+        #player {
+          width: 100vw;
+          height: 100vh;
+          margin: 0;
+          padding: 0;
         }
     </style>
 </head>
@@ -54,6 +29,7 @@
     window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
+        player.id = "player";
         const container = document.getElementById("container");
         container.appendChild(player);
         player.load("ducklife.swf");
